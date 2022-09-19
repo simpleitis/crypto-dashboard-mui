@@ -11,6 +11,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { connect } from 'react-redux';
 import { changeCurrency } from '../redux';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
 
 const darkTheme = createTheme({
   palette: {
@@ -43,6 +45,31 @@ function Header(props) {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar color="transparent" position="static">
           <Toolbar>
+            {/* <Typography
+              variant="h6"
+              sx={{
+                flex: 1,
+                color: 'gold',
+                fontFamily: 'Montserrat',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+              }}
+              onClick={() => navigate('/')}
+            >
+            <Button
+                align="right"
+                disableRipple
+                startIcon={
+                  <Avatar
+                    src="logo.png"
+                    variant="square"
+                    sx={{ width: 30, height: 30 }}
+                  />
+                }
+                sx={{ ':hover': { backgroundColor: 'white' } }}
+              ></Button>
+              Crypto Hunter
+            </Typography> */}
             <Typography
               variant="h6"
               sx={{
@@ -54,7 +81,30 @@ function Header(props) {
               }}
               onClick={() => navigate('/')}
             >
-              Crypto Hunter
+              <Button
+                align="right"
+                disableRipple
+                startIcon={
+                  <Avatar
+                    src="logo.png"
+                    variant="square"
+                    sx={{ width: 40, height: 40 }}
+                  />
+                }
+                sx={{ ':hover': { backgroundColor: 'transparent' } }}
+              >
+                <Typography
+                  sx={{
+                    flex: 1,
+                    color: 'gold',
+                    fontFamily: 'Montserrat',
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Crypto Hunter
+                </Typography>
+              </Button>
             </Typography>
 
             <Box sx={{ minWidth: 120 }}>
